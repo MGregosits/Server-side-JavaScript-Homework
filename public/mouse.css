@@ -1,0 +1,35 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.btn-blue, .btn-update, .btn-delete {
+    padding: 10px;
+    color: white;
+}
+
+.btn-blue {
+    background-color: #00aaff;
+}
+
+.btn-update {
+    background-color: #008000; /* Green */
+}
+
+.btn-delete {
+    background-color: #ff0000; /* Red */
+}
+
+table {
+    border-collapse: collapse;
+    width:100%;
+}
+
+table th,
+table td {
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+body {background-color: lightgrey;}
