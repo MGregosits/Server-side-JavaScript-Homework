@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="update-mouse.css">
+    <title>Update Mouse</title>
+</head>
+<body>
+
+<h2>Update Mouse</h2><br><br>
+
+<form action="/update-mouse" method="post">
+
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" value="Logitech G Pro X Superlight "><br><br>
+
+    <label for="connectivity">Connectivity</label><br>
+    <input type="text" id="connectivity" name="connectivity" value="Wireless"><br><br>
+
+    <label for="sensor">Sensor</label><br>
+    <input type="text" id ="sensor" name ="sensor" value ="HERO"><br><br>
+
+    <label for ="weight">Weight</label><br>
+    <input type ="text" id ="weight" name ="weight" value ="63g" ><br><br>
+
+    <button type = "submit">Confirm & Update</button>
+    <button
+    type = "button"
+    onclick =
+    "
+    window.location.href='/cancel';
+    "
+    >
+    Cancel</button>
+
+</form >
+
+</body >
+
+</html >

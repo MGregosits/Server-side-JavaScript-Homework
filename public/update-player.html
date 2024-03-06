@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="update-player.css">
+    <title>Update Player</title>
+</head>
+<body>
+
+<h2>Update Player</h2><br><br>
+
+<form action="/update-player" method="post">
+
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" value="s1mple"><br><br>
+
+    <label for="team">Team</label><br>
+    <input type="text" id="team" name="team" value="NaVi"><br><br>
+
+    <label for="mouse">Mouse</label><br>
+    <input type="text" id ="mouse" name ="mouse" value ="Logitech G Pro X Superlight"><br><br>
+
+    <label for ="dpi">DPI</label><br>
+    <input type ="number" id ="dpi" name ="dpi" value =400 ><br><br>
+
+    <label for = "sensitivity"> Sensitivity </label><br>
+    <input
+    type = "number"
+    step = "0.01"
+    id = "sensitivity"
+    name = "sensitivity"
+    value = 3.09><br><br>
+    <button type = "submit">Confirm & Update</button>
+    <button
+    type = "button"
+    onclick =
+    "
+    window.location.href='/cancel';
+    "
+    >
+    Cancel</button>
+
+</form >
+
+</body >
+
+</html >
