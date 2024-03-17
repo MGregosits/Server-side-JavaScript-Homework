@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="update-mouse.css">
+    <link rel="stylesheet" href="/styles/update-mouse.css">
     <title>Update Mouse</title>
 </head>
 <body>
 
 <h2>Update Mouse</h2><br><br>
 
-<form action="/update-mouse" method="post">
+<form action="/mouse/update" method="post">
 
     <label for="name">Name</label><br>
     <input type="text" id="name" name="name" value="Logitech G Pro X Superlight "><br><br>
@@ -25,16 +25,14 @@
     <input type ="text" id ="weight" name ="weight" value ="63g" ><br><br>
 
     <button type = "submit">Confirm & Update</button>
-    <a href="mouse.html">
     <button
     type = "button"
     onclick =
     "
-    window.location.href='/cancel';
+    window.location.href='/mouse';
     "
     >
     Cancel</button>
-    </a>
 
 </form >
 

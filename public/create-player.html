@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="create-player.css">
+    <link rel="stylesheet" href="/styles/create-player.css">
     <title>Update Player</title>
 </head>
 <body>
 
 <h2>Create Player</h2><br><br>
 
-<form action="/create-player" method="post">
+<form action="/player/create" method="post">
 
     <label for="name">Name</label><br>
     <input type="text" id="name" name="name"><br><br>
@@ -31,16 +31,15 @@
     id = "sensitivity"
     name = "sensitivity"><br><br>
     <button type = "submit">Confirm & Create</button>
-    <a href="index.html">
     <button
     type = "button"
     onclick =
     "
-    window.location.href='/cancel';
+    window.location.href='/player';
     "
     >
     Cancel</button>
-    </a>
+
 
 </form >
 

@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Mouse list</title>
-    <link rel="stylesheet" href="mouse.css">
+    <link rel="stylesheet" href="/styles/mouse.css">
 </head>
 <body>
 <div class="container">
-    <a href="index.html">
-    <button class="btn-blue">Go to the Player List</button>
-    </a>
+    <button onclick="window.location.href='/player'" class="btn-blue">Go to the Player List</button>
     <h1>List of Mice</h1>
-    <a href="create-mouse.html">
-    <button class="btn-blue">Add new Mouse</button>
-    </a>
+    <button onclick="window.location.href='/mouse/create'" class="btn-blue">Add new Mouse</button>
 
     <table>
         <tr>
@@ -29,10 +25,10 @@
             <td>HERO</td>
             <td>63g</td>
             <td>
-                <a href="update-mouse.html">
-                <button class="btn-update">Update</button>
-                </a>
-                <button class="btn-delete">Delete</button>
+                <button onclick="window.location.href='/mouse/update'" class="btn-update">Update</button>
+                <form action="/mouse/delete/Logitech G Pro X Superlight" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
             </td>
         </tr>
         <tr>
@@ -41,10 +37,10 @@
             <td>PAW3395</td>
             <td>69g</td>
             <td>
-                <a href="update-mouse.html">
-                    <button class="btn-update">Update</button>
-                </a>
-                <button class="btn-delete">Delete</button>
+                <button onclick="window.location.href='/mouse/update'" class="btn-update">Update</button>
+                <form action="/mouse/delete/VAXEE Zygen NP-01" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
             </td>
         </tr>
         <tr>
@@ -53,10 +49,10 @@
             <td>PAW3395</td>
             <td>73g</td>
             <td>
-                <a href="update-mouse.html">
-                    <button class="btn-update">Update</button>
-                </a>
-                <button class="btn-delete">Delete</button>
+                <button onclick="window.location.href='/mouse/update'" class="btn-update">Update</button>
+                <form action="/mouse/delete/VAXEE Outset AX" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
             </td>
         </tr>
     </table>
