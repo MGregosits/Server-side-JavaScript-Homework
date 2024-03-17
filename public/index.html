@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Player List</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
 <div class="container">
-    <a href="mouse.html">
-    <button class="btn-blue">Go to the Mouse List</button>
-    </a>
+    <button onclick="window.location.href='/mouse'" class="btn-blue">Go to the Mouse List</button>
     <h1>List of Counter Strike Pro Players</h1>
-    <a href="create-player.html">
-    <button class="btn-blue">Add new Player</button>
-    </a>
+    <button onclick="window.location.href='/player/create'" class="btn-blue">Add new Player</button>
 
     <table>
         <tr>
@@ -31,10 +27,10 @@
             <td>400</td>
             <td>3.09</td>
             <td>
-                <a href="update-player.html">
-                <button class="btn-update">Update</button>
-                </a>
-                <button class="btn-delete">Delete</button>
+                <button onclick="window.location.href='/player/update'" class="btn-update">Update</button>
+                <form action="/player/delete/s1mple" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
             </td>
         </tr>
         <tr>
@@ -44,10 +40,10 @@
             <td>800</td>
             <td>0.69</td>
             <td>
-                <a href="update-player.html">
-                    <button class="btn-update">Update</button>
-                </a>
-                <button class="btn-delete">Delete</button>
+                <button onclick="window.location.href='/player/update'" class="btn-update">Update</button>
+                <form action="/player/delete/NiKo" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
             </td>
         </tr>
         <tr>
@@ -57,10 +53,10 @@
             <td>400</td>
             <td>2.00</td>
             <td>
-                <a href="update-player.html">
-                    <button class="btn-update">Update</button>
-                </a>
-                <button class="btn-delete">Delete</button>
+                <button onclick="window.location.href='/player/update'" class="btn-update">Update</button>
+                <form action="/player/delete/ZywOo" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
             </td>
         </tr>
     </table>

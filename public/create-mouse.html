@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="create-mouse.css">
+    <link rel="stylesheet" href="/styles/create-mouse.css">
     <title>Create Mouse</title>
 </head>
 <body>
 
 <h2>Create Mouse</h2><br><br>
 
-<form action="/create-mouse" method="post">
+<form action="/mouse/create" method="post">
 
     <label for="name">Name</label><br>
     <input type="text" id="name" name="name"><br><br>
@@ -24,17 +24,15 @@
     <label for ="weight">Weight</label><br>
     <input type ="text" id ="weight" name ="weight"><br><br>
 
-    <button type = "submit">Confirm & Update</button>
-    <a href="mouse.html">
+    <button type = "submit">Confirm & Create</button>
     <button
     type = "button"
     onclick =
     "
-    window.location.href='/cancel';
+    window.location.href='/mouse';
     "
     >
     Cancel</button>
-    </a>
 
 </form >
 
