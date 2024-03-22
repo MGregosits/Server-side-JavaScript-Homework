@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
+const getMW = require('../middleware/get-mouse')
 const createMW = require('../middleware/create-mouse');
 const updateMW = require('../middleware/update-mouse');
 const deleteMW = require('../middleware/delete-mouse');

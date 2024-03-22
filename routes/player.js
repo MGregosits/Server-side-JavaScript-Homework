@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
+const getMW = require('../middleware/get-player')
 const createMW = require('../middleware/create-player');
 const updateMW = require('../middleware/update-player');
 const deleteMW = require('../middleware/delete-player');
