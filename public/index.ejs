@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player List</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+<div class="container">
+    <button onclick="window.location.href='/mouse'" class="btn-blue">Go to the Mouse List</button>
+    <h1>List of Counter Strike Pro Players</h1>
+    <button onclick="window.location.href='/player/create'" class="btn-blue">Add new Player</button>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Mouse</th>
+            <th>DPI</th>
+            <th>Sensitivity</th>
+            <th>Action</th>
+        </tr>
+        <% for (const player of players) { %>  <tr>
+            <td><%= player.name %></td>
+            <td><%= player.team %></td>
+            <td><%= player.mouse %></td>
+            <td><%= player.dpi %></td>
+            <td><%= player.sensitivity %></td>
+            <td>
+                <button onclick="window.location.href='/player/update/<%= player.id %>' " class="btn-update">Update</button>
+                <form action="/player/delete/<%= player.id %>" method="post">
+                    <input type="submit" value="Delete" class="btn-delete">
+                </form>
+            </td>
+        </tr>
+        <% } %>  </table>
+</div>
+</body>
+</html>

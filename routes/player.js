@@ -3,18 +3,19 @@ const router = express.Router();
 const path = require('path');
 
 const getMW = require('../middleware/get-player')
+const getPlayerMW = require('../middleware/get-player-by-id')
 const createMW = require('../middleware/create-player');
 const updateMW = require('../middleware/update-player');
 const deleteMW = require('../middleware/delete-player');
 const validateMW = require('../middleware/validate-player')
 
 
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+router.get('/', getMW, function(req, res) {
+    res.render('../public/index.ejs', {players: res.locals.players});
 });
 
 router.get('/create', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/create-player.html'));
+    res.render('../public/create-player.ejs');
 });
 
 router.post('/create', validateMW, createMW, function(req, res) {
@@ -23,8 +24,8 @@ router.post('/create', validateMW, createMW, function(req, res) {
     res.redirect('/');
 });
 
-router.get('/update', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/update-player.html'));
+router.get('/update/:id', getPlayerMW, function(req, res) {
+    res.render('../public/update-player.ejs', {player: res.locals.player});
 });
 
 router.post('/update', validateMW, updateMW, function(req, res) {

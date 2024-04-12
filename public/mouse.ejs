@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse List</title>
+    <link rel="stylesheet" href="/styles/mouse.css">
+</head>
+<body>
+<div class="container">
+    <button onclick="window.location.href='/player'" class="btn-blue">Go to the Player List</button>
+    <h1>List of Mice</h1>
+    <button onclick="window.location.href='/mouse/create'" class="btn-blue">Add new Mouse</button>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Connectivity</th>
+            <th>Sensor</th>
+            <th>Weight</th>
+            <th>Action</th>
+        </tr>
+        <% for (const mouse of mice) { %>
+            <tr>
+                <td><%= mouse.name %></td>  <td><%= mouse.connectivity %></td>
+                <td><%= mouse.sensor %></td>
+                <td><%= mouse.weight %></td>
+                <td>
+                    <button onclick="window.location.href='/mouse/update/<%= mouse.id %>' " class="btn-update">Update</button>
+                    <form action="/mouse/delete/<%= mouse.id %>" method="post">
+                        <input type="submit" value="Delete" class="btn-delete">
+                    </form>
+                </td>
+            </tr>
+        <% } %>  </table>
+</div>
+</body>
+</html>

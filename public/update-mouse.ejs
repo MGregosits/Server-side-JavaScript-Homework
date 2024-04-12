@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/update-mouse.css">
+    <title>Update Mouse</title>
+</head>
+<body>
+
+<h2>Update Mouse</h2><br><br>
+
+<form action="/mouse/update" method="post">
+
+    <% if (typeof mouse !== 'undefined') { %>
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" value="<%= mouse.name %>"><br><br>
+
+        <label for="connectivity">Connectivity</label><br>
+        <input type="text" id="connectivity" name="connectivity" value="<%= mouse.connectivity %>"><br><br>
+
+        <label for="sensor">Sensor</label><br>
+        <input type="text" id ="sensor" name ="sensor" value ="<%= mouse.sensor %>"><br><br>
+
+        <label for ="weight">Weight (grams)</label><br>
+        <input type ="number" id ="weight" name ="weight" value ="<%= mouse.weight %>"><br><br>
+    <% } %>
+
+    <button type = "submit">Confirm & Update</button>
+    <button
+            type = "button"
+            onclick =
+            "
+    window.location.href='/mouse';
+    "
+    >
+        Cancel</button>
+
+</form >
+
+</body >
+
+</html >
