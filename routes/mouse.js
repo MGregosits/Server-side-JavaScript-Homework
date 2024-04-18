@@ -10,11 +10,11 @@ const deleteMW = require('../middleware/delete-mouse');
 const validateMW = require('../middleware/validate-mouse')
 
 router.get('/', getMW, function(req, res) {
-    res.render('../public/mouse.ejs', { mice: res.locals.mice});
+    res.render('../views/mouse.ejs', { mice: res.locals.mice});
 });
 
 router.get('/create', function(req, res) {
-    res.render('../public/create-mouse.ejs');
+    res.render('../views/create-mouse.ejs');
 });
 
 router.post('/create', validateMW, createMW, function(req, res) {
@@ -24,7 +24,7 @@ router.post('/create', validateMW, createMW, function(req, res) {
 });
 
 router.get('/update/:id', getMouseMW, function(req, res) {
-    res.render('../public/update-mouse.ejs', {mouse: res.locals.mouse});
+    res.render('../views/update-mouse.ejs', {mouse: res.locals.mouse});
 });
 
 router.post('/update', validateMW, updateMW, function(req, res) {

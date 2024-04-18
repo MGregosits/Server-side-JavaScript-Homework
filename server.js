@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 // Middleware to serve static files
-// This middleware serves static files from the 'public' directory
+// This middleware serves static files from the 'views' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Mounting handlers

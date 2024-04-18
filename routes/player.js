@@ -11,11 +11,11 @@ const validateMW = require('../middleware/validate-player')
 
 
 router.get('/', getMW, function(req, res) {
-    res.render('../public/index.ejs', {players: res.locals.players});
+    res.render('../views/index.ejs', {players: res.locals.players});
 });
 
 router.get('/create', function(req, res) {
-    res.render('../public/create-player.ejs');
+    res.render('../views/create-player.ejs');
 });
 
 router.post('/create', validateMW, createMW, function(req, res) {
@@ -25,7 +25,7 @@ router.post('/create', validateMW, createMW, function(req, res) {
 });
 
 router.get('/update/:id', getPlayerMW, function(req, res) {
-    res.render('../public/update-player.ejs', {player: res.locals.player});
+    res.render('../views/update-player.ejs', {player: res.locals.player});
 });
 
 router.post('/update', validateMW, updateMW, function(req, res) {
