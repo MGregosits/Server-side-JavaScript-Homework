@@ -4,6 +4,7 @@ const path = require('path');
 
 const getMW = require('../middleware/get-player')
 const getPlayerMW = require('../middleware/get-player-by-id')
+const getMiceMW = require('../middleware/get-mouse');
 const createMW = require('../middleware/create-player');
 const updateMW = require('../middleware/update-player');
 const deleteMW = require('../middleware/delete-player');
@@ -14,8 +15,8 @@ router.get('/', getMW, function(req, res) {
     res.render('../views/index.ejs', {players: res.locals.players});
 });
 
-router.get('/create', function(req, res) {
-    res.render('../views/create-player.ejs');
+router.get('/create', getMiceMW, function(req, res) {
+    res.render('../views/create-player.ejs', {mice: res.locals.mice});
 });
 
 router.post('/create', validateMW, createMW, function(req, res) {
@@ -24,8 +25,8 @@ router.post('/create', validateMW, createMW, function(req, res) {
     res.redirect('/');
 });
 
-router.get('/update/:id', getPlayerMW, function(req, res) {
-    res.render('../views/update-player.ejs', {player: res.locals.player});
+router.get('/update/:id', getPlayerMW, getMiceMW, function(req, res) {
+    res.render('../views/update-player.ejs', {player: res.locals.player, mice: res.locals.mice});
 });
 
 router.post('/update/:id', validateMW, updateMW, function(req, res) {

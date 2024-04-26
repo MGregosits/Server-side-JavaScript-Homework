@@ -1,4 +1,6 @@
-module.exports = function validateMW(req, res, next) {
+Mouse = require('../models/mouse');
+
+module.exports = async function validateMW(req, res, next) {
     let { name, team, mouse, dpi, sensitivity } = req.body;
 
     dpi = Number(dpi);
@@ -14,20 +16,30 @@ module.exports = function validateMW(req, res, next) {
         return res.status(400).send("Invalid data types for one or more fields.");
     }
 
-    // Validate if the weight is a non-negative Number
-    if (dpi <= 0) {
-        return res.status(400).send("DPI must be a positive number.");
+    // Validate if the dpi is in an acceptable range
+    if (dpi < 100 || dpi > 16000) {
+        return res.status(400).send("DPI must be between 100 and 16000.");
     }
 
-    // Validate if the weight is a non-negative Number
-    if (sensitivity <= 0) {
-        return res.status(400).send("Sensitivity must be a positive number.");
+    // Validate if the sensitivity is in an acceptable range
+    if (sensitivity <= 0 || sensitivity > 10) {
+        return res.status(400).send("Sensitivity must be a positive number and reasonable.");
     }
 
-    req.body.dpi = dpi;
-    req.body.sensitivity = sensitivity;
+    try {
+        // Look up the mouse ObjectId by name
+        const mouseDoc = await Mouse.findOne({ name: mouse });
+        if (!mouseDoc) {
+            return res.status(400).send("Mouse not found.");
+        }
 
+        // Replace the mouse name with its ObjectId
+        req.body.mouse = mouseDoc._id;
 
-    // If all validations pass
-    next();
-}
+        // Continue with the middleware chain
+        next();
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send("An error occurred while processing your request.");
+    }
+};

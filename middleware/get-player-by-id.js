@@ -4,7 +4,7 @@ const Player = require('../models/player');
 module.exports = async function (req, res, next) {
     const playerId = req.params.id;
     try {
-        const player = await Player.findById(playerId);
+        const player = await Player.findById(playerId).populate('mouse');
         if (!player) {
             return res.status(404).send('Player not found.');
         }
