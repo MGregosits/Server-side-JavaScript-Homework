@@ -28,7 +28,7 @@ router.get('/update/:id', getPlayerMW, function(req, res) {
     res.render('../views/update-player.ejs', {player: res.locals.player});
 });
 
-router.post('/update', validateMW, updateMW, function(req, res) {
+router.post('/update/:id', validateMW, updateMW, function(req, res) {
     console.log('Received POST request for updating player');
     console.log(req.body);
     res.redirect('/');
