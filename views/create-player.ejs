@@ -19,7 +19,11 @@
     <input type="text" id="team" name="team"><br><br>
 
     <label for="mouse">Mouse</label><br>
-    <input type="text" id ="mouse" name ="mouse"><br><br>
+    <select id="mouse" name="mouse">
+        <% mice.forEach(function(mouse){ %>
+            <option value="<%= mouse.name %>"><%= mouse.name %></option>
+        <% }); %>
+    </select><br><br><br><br>
 
     <label for ="dpi">DPI</label><br>
     <input type ="number" id ="dpi" name ="dpi"><br><br>

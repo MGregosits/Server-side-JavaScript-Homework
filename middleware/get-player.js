@@ -3,7 +3,7 @@ const Player = require('../models/player');
 module.exports = async function (req, res, next) {
 // Getting every player from the database for the player view
     try {
-        const players = await Player.find();
+        const players = await Player.find().populate('mouse');
         res.locals.players = players;
         next();
     } catch (err) {

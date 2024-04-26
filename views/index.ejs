@@ -23,12 +23,12 @@
         <% for (const player of players) { %>  <tr>
             <td><%= player.name %></td>
             <td><%= player.team %></td>
-            <td><%= player.mouse %></td>
+            <td><%= player.mouse.name %></td>
             <td><%= player.dpi %></td>
             <td><%= player.sensitivity %></td>
             <td>
-                <button onclick="window.location.href='/player/update/<%= player.id %>' " class="btn-update">Update</button>
-                <form action="/player/delete/<%= player.id %>" method="post">
+                <button onclick="window.location.href='/player/update/<%= player._id %>' " class="btn-update">Update</button>
+                <form action="/player/delete/<%= player._id %>" method="post">
                     <input type="submit" value="Delete" class="btn-delete">
                 </form>
             </td>
