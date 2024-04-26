@@ -5,6 +5,11 @@ const path = require('path')
 const bodyParser = require('body-parser');
 const playerRoutes = require('./routes/player');
 const mouseRoutes = require('./routes/mouse');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/EL502Z', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB...'))
+    .catch(err => console.error('Could not connect to MongoDB...', err));
 
 // Middleware to parse the request body
 // This middleware parses the body of incoming HTTP requests

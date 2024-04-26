@@ -20,6 +20,13 @@
     background-color: #ff0000; /* Red */
 }
 
+.btn-update, .btn-delete {
+    padding: 10px;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
     width:100%;

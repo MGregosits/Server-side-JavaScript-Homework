@@ -10,7 +10,7 @@
 
 <h2>Update Mouse</h2><br><br>
 
-<form action="/mouse/update" method="post">
+<form action="/mouse/update/<%= mouse._id %>" method="post">
 
     <% if (typeof mouse !== 'undefined') { %>
         <label for="name">Name</label><br>

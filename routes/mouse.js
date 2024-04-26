@@ -27,14 +27,14 @@ router.get('/update/:id', getMouseMW, function(req, res) {
     res.render('../views/update-mouse.ejs', {mouse: res.locals.mouse});
 });
 
-router.post('/update', validateMW, updateMW, function(req, res) {
+router.post('/update/:id', validateMW, updateMW, function(req, res) {
     console.log('Received POST request for updating mouse');
     console.log(req.body);
     res.redirect('/mouse')
 });
 
 router.post('/delete/:id', deleteMW, function (req, res) {
-    console.log(`Received POST request for deleting mouse with id ${req.params.id}`);
+    console.log(`Mouse with id ${req.params.id} has been deleted.`);
     res.redirect('/mouse')
 });
 

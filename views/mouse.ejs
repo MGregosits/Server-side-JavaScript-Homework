@@ -23,10 +23,10 @@
             <tr>
                 <td><%= mouse.name %></td>  <td><%= mouse.connectivity %></td>
                 <td><%= mouse.sensor %></td>
-                <td><%= mouse.weight %></td>
+                <td><%= mouse.weight %>g</td>
                 <td>
-                    <button onclick="window.location.href='/mouse/update/<%= mouse.id %>' " class="btn-update">Update</button>
-                    <form action="/mouse/delete/<%= mouse.id %>" method="post">
+                    <button onclick="window.location.href='/mouse/update/<%= mouse._id %>' " class="btn-update">Update</button>
+                    <form action="/mouse/delete/<%= mouse._id %>" method="post">
                         <input type="submit" value="Delete" class="btn-delete">
                     </form>
                 </td>
