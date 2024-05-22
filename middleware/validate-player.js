@@ -3,27 +3,27 @@ Mouse = require('../models/mouse');
 module.exports = async function validateMW(req, res, next) {
     let { name, team, mouse, dpi, sensitivity } = req.body;
 
-    dpi = Number(dpi);
-    sensitivity = Number(sensitivity);
-
     // Validate presence of all required fields
-    if (!name || !team || !mouse || isNaN(dpi) || isNaN(sensitivity)) {
+    if (!name || !team || !mouse || dpi === undefined || sensitivity === undefined) {
         return res.status(400).send("All fields are required.");
     }
 
     // Validate field types
-    if (typeof name !== 'string' || typeof team !== 'string' || typeof mouse !== 'string' || typeof dpi !== 'number' || typeof sensitivity !== 'number') {
+    if (typeof name !== 'string' || typeof team !== 'string' || typeof mouse !== 'string' || isNaN(Number(dpi)) || isNaN(Number(sensitivity))) {
         return res.status(400).send("Invalid data types for one or more fields.");
     }
 
+    dpi = Number(dpi);
+    sensitivity = Number(sensitivity);
+
     // Validate if the dpi is in an acceptable range
-    if (dpi < 100 || dpi > 16000) {
-        return res.status(400).send("DPI must be between 100 and 16000.");
+    if (dpi < 100 || dpi > 30000) {
+        return res.status(400).send("DPI must be between 100 and 30000.");
     }
 
     // Validate if the sensitivity is in an acceptable range
     if (sensitivity <= 0 || sensitivity > 10) {
-        return res.status(400).send("Sensitivity must be a positive number and reasonable.");
+        return res.status(400).send("Sensitivity must be a positive number and reasonable. Maximum sensitivity value is 10. ");
     }
 
     try {

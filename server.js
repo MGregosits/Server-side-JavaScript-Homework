@@ -30,3 +30,5 @@ app.use('/mouse', mouseRoutes);
 
 // Starting the server
 app.listen(port, () => {console.log(`Express app is running on port ${port}`)} );
+
+module.exports = app;

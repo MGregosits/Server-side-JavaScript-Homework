@@ -2,20 +2,21 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-const getMW = require('../middleware/get-player')
-const getPlayerMW = require('../middleware/get-player-by-id')
+const getMW = require('../middleware/get-player');
+const getPlayerMW = require('../middleware/get-player-by-id');
 const getMiceMW = require('../middleware/get-mouse');
 const createMW = require('../middleware/create-player');
 const updateMW = require('../middleware/update-player');
 const deleteMW = require('../middleware/delete-player');
-const validateMW = require('../middleware/validate-player')
+const validateMW = require('../middleware/validate-player');
+const validateMouseExistenceMW = require('../middleware/validate-mouse-existence');
 
 
 router.get('/', getMW, function(req, res) {
     res.render('../views/index.ejs', {players: res.locals.players});
 });
 
-router.get('/create', getMiceMW, function(req, res) {
+router.get('/create', validateMouseExistenceMW, getMiceMW, function(req, res) {
     res.render('../views/create-player.ejs', {mice: res.locals.mice});
 });
 
