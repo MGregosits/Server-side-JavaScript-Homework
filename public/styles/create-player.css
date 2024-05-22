@@ -43,4 +43,13 @@ a {
     text-decoration: none;
 }
 
+select#mouse {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
